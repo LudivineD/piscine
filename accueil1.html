@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" /> 
+        <title>ECE Amazone</title>
+        <link rel="stylesheet" type="text/css" href="design1.css" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 function maBoucle(){
+                 setTimeout(function()
+                 {
+                    //alert('Bonjour ECE Paris!'); // affichera "Bonjour ECE Paris!" toutes les secondes
+                    maBoucle(); // relance la fonction
+                 }, 1000);
+                }
+                var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
+                $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
+                indexImg = $img.length - 1, // on définit l'index du dernier élément
+                i = 0, // on initialise un compteur
+                $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+                $img.css('display', 'none'); // on cache les images
+                $currentImg.css('display', 'block'); // on affiche seulement l'image courante
+
+                $carrousel.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
+
+                $('.next').click(function(){ // image suivante
+                 i++; // on incrémente le compteur
+                 if( i <= indexImg ){
+                 $img.css('display', 'none'); // on cache les images
+                 $currentImg = $img.eq(i); // on définit la nouvelle image
+                 $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                else{
+                    i=0;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                $('.prev').click(function(){ // image précédente
+                 i--;
+                 if( i >= 0 ){
+                // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
+                 $img.css('display', 'none');
+                 $currentImg = $img.eq(i);
+                 $currentImg.css('display', 'block');
+                }
+                else{
+                    i=4;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                maBoucle(); // on n’oublie pas de lancer la fonction une première fois
+            });
+         </script>
+    </head>
+    <body id="page">
+        <div class="container">
+            <div class="recherche">
+                <div class="logo">
+                    <a href="">
+                        <img src="images/eceamazone.png">
+                    </a>
+                </div>
+                <div class="barre">
+                    <form class="search">
+                        <input type="text" id="search-input" placeholder="Search here.....">
+                    </form>
+                </div>
+            </div>
+            <nav>
+                <ul id="menu-deroulant">
+                    <li><a href=".html">Catégories</a>
+                        <ul>
+                            <li><a href=".html">Livres</a></li>
+                            <li><a href="#">Vêtements</a></li>
+                            <li><a href="#">Musique</a></li>
+                            <li><a href="#">Sports & Loisir </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ventes flash</a></li>
+                    <li><a href="#">Vendre</a></li>
+                    <li><a href="#">Panier</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="carrousel"> 
+                <li><img src="images/b.jpg" width="100%" height="400.jpg"/>
+                <li><img src="images/FF.jpg" width="100%" height="400.jpg"/></li>
+                <li><img src="images/chat.jpg" width="100%" height="400.jpg"/></li>
+                <li><img src="images/france4.jpg" width="100%" height="400.jpg"/></li>
+                <li><img src="images/france6.jpg" width="100%" height="400.jpg"/></li>
+        </div>
+        <input type="button" value="Précédent" class="prev">
+        <input type="button" value="Suivant" class="next">
+    </body>
+</html>
