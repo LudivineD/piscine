@@ -1,0 +1,75 @@
+#Item:
+-Id
+-Nom
+-Photo(s)
+-Description
+-Vidéo
+-Prix à l'unité
+-Catégorie
+-Fournisseurs
+
+#Catégorie:
+-id catégorie
+-Livres
+-Musique
+-Vêtements
+-Sports et Loisirs
+
+#Livres:
+-Titre
+-Age
+-Auteur
+-Editeur
+-Genre
+
+#Musique:
+-Titre
+-Artiste
+-style
+
+#Vêtements:
+-Type
+-Sexe
+-Taille
+
+#Sports et Loisirs:
+-nom
+
+
+#Fournisseurs (Vendeurs):
+-Email 
+-Pseudo 
+-Nom
+-Photo
+-Image de fond
+-Items
+
+#Acheteurs:
+-Nom
+-Prenom
+-Adresse
+-Ville
+-Code Postal
+-Email
+-Panier
+-login
+-mot de passe
+-Numéro de téléphone
+-Paiement
+
+#Paiment
+-Type de carte
+-Numéro de carte
+-Nom client
+-Date expiration carte
+-Code sécurité
+
+#Panier
+-login
+-Item
+-Quantité
+
+
+#Administrateur:
+-Id admin
+- Nom Vendeur
