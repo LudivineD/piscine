@@ -49,3 +49,93 @@
 #carrousel {
     list-style: none;
 }
+.button {
+    /* on cache les bouttons complètement sur la gauche 
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    z-index: 1000;*/
+    display:flex;
+}
+
+#triangleR {
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-left: 38px solid blue;
+    cursor: pointer;
+    position:absolute;
+    top:300px;
+    left:88%;
+}
+#triangleL {
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-right: 38px solid blue;
+    cursor: pointer;
+    position:absolute;
+    top:300px;
+    left:10%;
+}
+
+#category{
+    margin:8px;
+    display:flex;
+    flex-wrap: wrap; /* si pas assez de place alors revient a la ligne*/
+    justify-content: space-around;
+}
+#category > div{
+    height:328px;
+    width:228px;
+    border:solid;
+}
+h2{
+    width:200px;
+    margin:3px 18px 0px 0px;
+}
+.element{
+    display:flex;
+    flex-wrap: wrap; /* si pas assez de place alors revient a la ligne*/
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+.sous-element{
+    height:108px;
+    background-color: rgba(173,216,230,0.18);
+    margin:0px 8px 0px 0px;
+}
+h6{
+    margin-left:20px;
+}
+#bot{
+    background-color: rgba(0, 22, 28, 1);
+    padding: 18px;
+}
+#bottom{
+    display:flex;
+    justify-content: space-around;
+}
+#bottom li{
+    margin:8px;
+    list-style: none;
+    color: white;
+}
+#bottom a{
+    text-decoration: none;
+    color: white;
+}
+
+#bottom p{
+    width:188px;
+    padding-bottom:8px;
+}
+#footer {
+    bottom:0;
+    background-color: rgba(0, 8, 68, 1);
+    color: white;
+    padding:8px;
+    text-align: center;
+}

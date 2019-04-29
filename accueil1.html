@@ -16,6 +16,7 @@
                  }, 1000);
                 }
                 var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
+
                 $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
                 indexImg = $img.length - 1, // on définit l'index du dernier élément
                 i = 0, // on initialise un compteur
@@ -23,7 +24,7 @@
                 $img.css('display', 'none'); // on cache les images
                 $currentImg.css('display', 'block'); // on affiche seulement l'image courante
 
-                $carrousel.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
+                $carrousel.append('<div class="controls"> <span class="prev"></span> <span class="next"></span> </div>');
 
                 $('.next').click(function(){ // image suivante
                  i++; // on incrémente le compteur
@@ -55,6 +56,11 @@
                 }
                 });
                 maBoucle(); // on n’oublie pas de lancer la fonction une première fois
+                
+                /*funtion appearButton(){
+                $button = ('.button');
+                $button.css('left', 'auto');
+                }*/
             });
          </script>
     </head>
@@ -91,13 +97,130 @@
             </nav>
         </div>
         <div id="carrousel"> 
-                <li><img src="images/b.jpg" width="100%" height="400.jpg"/>
-                <li><img src="images/FF.jpg" width="100%" height="400.jpg"/></li>
-                <li><img src="images/chat.jpg" width="100%" height="400.jpg"/></li>
-                <li><img src="images/france4.jpg" width="100%" height="400.jpg"/></li>
-                <li><img src="images/france6.jpg" width="100%" height="400.jpg"/></li>
+                <li><img  src="images/b.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/FF.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/chat.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france4.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france6.jpg" width="100%" height="400.jpg"/></li>
+                <div class="button">
+                    <div id="triangleL" class="prev">
+                    </div>
+                    <div id="triangleR" class="next">
+                    </div>
+                </div>
         </div>
-        <input type="button" value="Précédent" class="prev">
-        <input type="button" value="Suivant" class="next">
-    </body>
+        <div id="category">
+            <div class="element">
+                <h2>Livres</h2>
+                <div class="sous-element">
+                    <img src="images/HP.jpg" width="100.jpg" height="88.jpg">
+                    <h6> Harry Potter</h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/dragon.jpg" width="100.jpg" height="88.jpg">
+                    <h6> Dragon Ball</h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/13.jpg" width="100.jpg" height="88.jpg">
+                    <h6>13 reasons why</h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/art.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Into the wild</h6>
+                </div>
+            </div>
+            <div class="element">
+                <h2>Vêtements</h2>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+            </div>
+            <div class="element">
+                <h2>Musique</h2>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+            </div>
+            <div class="element">
+                <h2>Sports et Loisir</h2>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+                <div class="sous-element">
+                    <img>
+                    <h6></h6>
+                </div>
+            </div>
+        </div>
+        <div id="bot"> 
+            <ul id="bottom">
+                <li><p>
+                        Nos différentes catégories
+                    </p>
+                    <ul>
+                        <li><a href="">Livres</a></li>
+                        <li><a href="#">Vêtements</a></li>
+                        <li><a href="#">Musique</a></li>
+                        <li><a href="#">Sports & Loisir </a></li>
+                    </ul>
+                </li>
+                <li><p>
+                        Devenir vendeur
+                    </p>
+                    <ul>
+                        <li><a href=".html">Vendre sur Ece Amazone</a></li>
+                        <li><a href="#">Devenir partenaire</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        Une question ?
+                    </p>
+                    <ul>
+                        <li><a href=".html">FAQ</a></li>
+                        <li><a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a></li>
+                        <li>01 02 03 04 05</li>
+                    </ul>
+                </li>>
+            </ul>
+        </div>
+         <div id="footer">Copyright &copy; 2019, Ece Amazone<br>
+         <a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a>
+         </div>
+</body>
 </html>
