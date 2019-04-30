@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-deroulant, #menu-deroulant ul {
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center; /* pour centrer avec display flex*/
+}
+
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding-right: 58px;
+    font-size: 1.3em;
+    padding: 0px 48px 8px 48px;
+    background-color: black;
+
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+#menu-deroulant a:hover {
+/* Au survol des li du menu on replace les sous menus */
+    color: #FFD700;
+}
+.recherche{
+    display: flex;
+}
+.barre{
+    margin: auto;
+    background-color: black;
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 2px;   /* Epaisseur de la bordure  */
+    border-color: blue; 
+    padding: 10px 10px 10px 10px;
+    border-radius:88px;
+}
+#searchthis #search {
+    background-color: black;   /* Couleur de fond */
+    color:blue;
+    border: none;
+    width:388px;
+    padding: 5px 30px 5px 10px;
+    font-family: Lato;   /* Police du texte */
+    font-size: 16px;   /* Taille de la police du texte */
+    font-weight: normal;   /* bold = gras */
+    letter-spacing: 1px;   /* Espacement des caractères */
+}
+#searchthis #search-btn{
+    font-family: Lato;   /* Police du texte */
+    font-size: 16px;   /* Taille de la police du texte */
+    font-weight: normal;   /* bold = gras */
+    letter-spacing: 2px;   /* Espacement des caractères */
+    background-color:black;
+    color:yellow;
+    border:none;
+    cursor:pointer;
+    text-transform: uppercase; 
+}
+#searchthis #search-btn:hover {
+    color: green;   /* Couleur du texte */
+}
+.container{
+    background-color: black;
+}
+#carrousel {
+    list-style: none;
+}
+.button {
+    /* on cache les bouttons complètement sur la gauche 
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    z-index: 1000;*/
+    display:flex;
+}
+
+#triangleR {
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-left: 38px solid blue;
+    cursor: pointer;
+    position:absolute;
+    top:250px;
+    left:88%;
+}
+#triangleL {
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-right: 38px solid blue;
+    cursor: pointer;
+    position:absolute;
+    top:250px;
+    left:10%;
+}
+
+#category{
+    padding:8px;
+    flex-wrap: wrap; /* si pas assez de place alors revient a la ligne*/
+    background-color:#191970;
+}
+.container-elmt{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.libros{
+    font-family: Lato;
+    margin-bottom:18px;
+}
+.container-elmt > .element{
+    height:288px;
+    width:228px;
+    border: solid silver;
+    border-width: thin;
+    margin-top:8px;
+}
+
+.data{
+    border: solid silver;
+    border-width: thin;
+    background-color: rgb(240, 240, 240);
+    margin:0;
+}
+.data p{
+    height:100%;
+    width:226px;
+    text-align: center;
+    padding-top:20px;
+}
+.element{
+    display:flex;
+    flex-wrap: wrap; /* si pas assez de place alors revient a la ligne*/
+    background-color:#F8F8FF;
+}
+.sous-element{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:18px;
+}
+h6{
+    margin-left:20px;
+}
+#category a{
+    text-decoration: none;
+    color: blue;
+}
+#category h2:hover{
+    color:purple;
+}
+#bot{
+    background-color: rgba(0, 22, 28, 1);
+    padding: 18px;
+}
+#bottom{
+    display:flex;
+    justify-content: space-around;
+}
+#bottom li{
+    margin:8px;
+    list-style: none;
+    color: white;
+}
+#bottom a{
+    text-decoration: none;
+    color: white;
+}
+
+#bottom p{
+    width:188px;
+    padding-bottom:8px;
+}
+#footer {
+    bottom:0;
+    background-color: rgba(0, 8, 68, 1);
+    color: white;
+    padding:8px;
+    text-align: center;
+}
