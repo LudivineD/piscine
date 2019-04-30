@@ -1,0 +1,184 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 30 avr. 2019 à 18:54
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `amazon`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `EmailA` varchar(50) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  PRIMARY KEY (`EmailA`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `item`
+--
+
+DROP TABLE IF EXISTS `item`;
+CREATE TABLE IF NOT EXISTS `item` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(50) NOT NULL,
+  `Photo` varchar(100) NOT NULL,
+  `Description` varchar(500) NOT NULL,
+  `Video` varchar(100) NOT NULL,
+  `Prix` int(11) NOT NULL,
+  `NombreVendu` int(11) NOT NULL,
+  `EmailV` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `EmailV` (`EmailV`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `livre`
+--
+
+DROP TABLE IF EXISTS `livre`;
+CREATE TABLE IF NOT EXISTS `livre` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Genre` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `musique`
+--
+
+DROP TABLE IF EXISTS `musique`;
+CREATE TABLE IF NOT EXISTS `musique` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Genre` varchar(100) NOT NULL,
+  `Artiste` varchar(100) NOT NULL,
+  `Album` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sport`
+--
+
+DROP TABLE IF EXISTS `sport`;
+CREATE TABLE IF NOT EXISTS `sport` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Genre` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `EmailU` varchar(50) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  `Nom` varchar(50) NOT NULL,
+  `Prenom` varchar(50) NOT NULL,
+  `Adresse` varchar(150) NOT NULL,
+  `Paiement` int(11) NOT NULL,
+  `EmailV` varchar(50) NOT NULL,
+  PRIMARY KEY (`EmailU`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vendeur`
+--
+
+DROP TABLE IF EXISTS `vendeur`;
+CREATE TABLE IF NOT EXISTS `vendeur` (
+  `EmailV` varchar(50) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  `Photo` varchar(100) NOT NULL,
+  `Image` varchar(100) NOT NULL,
+  PRIMARY KEY (`EmailV`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vetement`
+--
+
+DROP TABLE IF EXISTS `vetement`;
+CREATE TABLE IF NOT EXISTS `vetement` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Taille` int(11) NOT NULL,
+  `H/F` varchar(1) NOT NULL,
+  `Couleur` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`EmailV`) REFERENCES `vendeur` (`EmailV`);
+
+--
+-- Contraintes pour la table `livre`
+--
+ALTER TABLE `livre`
+  ADD CONSTRAINT `livre_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `musique`
+--
+ALTER TABLE `musique`
+  ADD CONSTRAINT `musique_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `sport`
+--
+ALTER TABLE `sport`
+  ADD CONSTRAINT `sport_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `vetement`
+--
+ALTER TABLE `vetement`
+  ADD CONSTRAINT `vetement_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
