@@ -68,24 +68,25 @@
         <div class="container">
             <div class="recherche">
                 <div class="logo">
-                    <a href="">
+                    <a href="accueil1.html">
                         <img src="images/eceamazone.png">
                     </a>
                 </div>
                 <div class="barre">
-                    <form class="search">
-                        <input type="text" id="search-input" placeholder="Search here.....">
+                    <form action="/search" class="search" id="searchthis" method="get">
+                        <input id="search" name="q" type="text" placeholder="Search here ....." />
+                        <input id="search-btn" type="submit" value="Rechercher" />
                     </form>
                 </div>
             </div>
             <nav>
                 <ul id="menu-deroulant">
-                    <li><a href=".html">Catégories</a>
+                    <li><a href="">Catégories</a>
                         <ul>
-                            <li><a href=".html">Livres</a></li>
-                            <li><a href="#">Vêtements</a></li>
-                            <li><a href="#">Musique</a></li>
-                            <li><a href="#">Sports & Loisir </a></li>
+                            <li><a href="Livres.html">Livres</a></li>
+                            <li><a href="Vetements.html">Vêtements</a></li>
+                            <li><a href="Musica.html">Musique</a></li>
+                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
                         </ul>
                     </li>
                     <li><a href="#">Ventes flash</a></li>
@@ -97,21 +98,21 @@
             </nav>
         </div>
         <div id="carrousel"> 
-                <li><img  src="images/b.jpg" width="100%" height="400.jpg"/></li>
-                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/FF.jpg" width="100%" height="400.jpg"/></li>
-                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/chat.jpg" width="100%" height="400.jpg"/></li>
-                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france4.jpg" width="100%" height="400.jpg"/></li>
-                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france6.jpg" width="100%" height="400.jpg"/></li>
-                <div class="button">
-                    <div id="triangleL" class="prev">
-                    </div>
-                    <div id="triangleR" class="next">
-                    </div>
+            <li><img  src="images/promo1.jpg" width="100%" height="300.jpg"/></li>
+            <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/promo2.jpg" width="100%" height="300.jpg"/></li>
+            <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/chat.jpg" width="100%" height="400.jpg"/></li>
+            <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france4.jpg" width="100%" height="400.jpg"/></li>
+            <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france6.jpg" width="100%" height="400.jpg"/></li>
+            <div class="button">
+                <div id="triangleL" class="prev">
                 </div>
+                <div id="triangleR" class="next">
+                </div>
+            </div>
         </div>
         <div id="category">
             <div class="element">
-                <h2>Livres</h2>
+                <a href="Livres.html"><h2>Livres</h2></a>
                 <div class="sous-element">
                     <img src="images/HP.jpg" width="100.jpg" height="88.jpg">
                     <h6> Harry Potter</h6>
@@ -130,60 +131,60 @@
                 </div>
             </div>
             <div class="element">
-                <h2>Vêtements</h2>
+                <a href=".html"><h2>Vêtements</h2></a>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/blazer.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Blazer bleu</h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/chemise.jpg" width="100.jpg" height="88.jpg">             
+                    <h6>      Chemise </h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/sweat.jpg" width="100.jpg" height="88.jpg">    
+                    <h6> Sweat rose</h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
-                </div>
-            </div>
-            <div class="element">
-                <h2>Musique</h2>
-                <div class="sous-element">
-                    <img>
-                    <h6></h6>
-                </div>
-                <div class="sous-element">
-                    <img>
-                    <h6></h6>
-                </div>
-                <div class="sous-element">
-                    <img>
-                    <h6></h6>
-                </div>
-                <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/lacoste.jpg" width="100.jpg" height="88.jpg">    
+                    <h6>  Polo Lacoste</h6>
                 </div>
             </div>
             <div class="element">
-                <h2>Sports et Loisir</h2>
+                <a href="Musica.html"><h2>Musique</h2></a>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/ceinturenoire.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Maitre Gims</h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/johnnyhallyday.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Johnny Hallyday</h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/enceinte1.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Enceinte</h6>
                 </div>
                 <div class="sous-element">
-                    <img>
-                    <h6></h6>
+                    <img src="images/guitare.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Guitare</h6>
+                </div>
+            </div>
+            <div class="element">
+                <a href="Sports et Loisir.html"><h2>Sports et Loisir</h2></a>
+                <div class="sous-element">
+                    <img src="images/basket.jpg" width="100.jpg" height="88.jpg">
+                    <h6>Balle</h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/nikemercurial.jpg" width="100.jpg" height="88.jpg">
+                    <h6> Nike mercurial</h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/ps4.jpg" width="100.jpg" height="88.jpg">
+                    <h6> Ps4 </h6>
+                </div>
+                <div class="sous-element">
+                    <img src="images/pcportable.jpg" width="100.jpg" height="88.jpg">
+                    <h6>PC portable</h6>
                 </div>
             </div>
         </div>
@@ -193,10 +194,10 @@
                         Nos différentes catégories
                     </p>
                     <ul>
-                        <li><a href="">Livres</a></li>
-                        <li><a href="#">Vêtements</a></li>
-                        <li><a href="#">Musique</a></li>
-                        <li><a href="#">Sports & Loisir </a></li>
+                        <li><a href="Livres.html">Livres</a></li>
+                        <li><a href="Vetements.html">Vêtements</a></li>
+                        <li><a href="Musica.html">Musique</a></li>
+                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
                     </ul>
                 </li>
                 <li><p>
