@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" /> 
+        <title>ECE Amazone</title>
+        <link rel="stylesheet" type="text/css" href="categcss.css" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 function maBoucle(){
+                 setTimeout(function()
+                 {
+                    //alert('Bonjour ECE Paris!'); // affichera "Bonjour ECE Paris!" toutes les secondes
+                    maBoucle(); // relance la fonction
+                 }, 1000);
+                }
+                var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
+
+                $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
+                indexImg = $img.length - 1, // on définit l'index du dernier élément
+                i = 0, // on initialise un compteur
+                $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+                $img.css('display', 'none'); // on cache les images
+                $currentImg.css('display', 'block'); // on affiche seulement l'image courante
+
+                $carrousel.append('<div class="controls"> <span class="prev"></span> <span class="next"></span> </div>');
+
+                $('.next').click(function(){ // image suivante
+                 i++; // on incrémente le compteur
+                 if( i <= indexImg ){
+                 $img.css('display', 'none'); // on cache les images
+                 $currentImg = $img.eq(i); // on définit la nouvelle image
+                 $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                else{
+                    i=0;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                $('.prev').click(function(){ // image précédente
+                 i--;
+                 if( i >= 0 ){
+                // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
+                 $img.css('display', 'none');
+                 $currentImg = $img.eq(i);
+                 $currentImg.css('display', 'block');
+                }
+                else{
+                    i=4;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                maBoucle(); // on n’oublie pas de lancer la fonction une première fois
+                
+                /*funtion appearButton(){
+                $button = ('.button');
+                $button.css('left', 'auto');
+                }*/
+            });
+         </script>
+    </head>
+    <body id="page">
+        <div class="container">
+            <div class="recherche">
+                <div class="logo">
+                    <a href="">
+                        <img src="images/eceamazone.png">
+                    </a>
+                </div>
+                <div class="barre">
+                    <form action="/search" class="search" id="searchthis" method="get">
+                        <input id="search" name="q" type="text" placeholder="Search here ....." />
+                        <input id="search-btn" type="submit" value="Rechercher" />
+                    </form>
+                </div>
+            </div>
+            <nav>
+                <ul id="menu-deroulant">
+                    <li><a href=".html">Catégories</a>
+                        <ul>
+                            <li><a href="Livres.html">Livres</a></li>
+                            <li><a href="Vetements.html">Vêtements</a></li>
+                            <li><a href="Musica.html">Musique</a></li>
+                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ventes flash</a></li>
+                    <li><a href="#">Vendre</a></li>
+                    <li><a href="#">Panier</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="carrousel"> 
+                <li><img  src="images/promo1.jpg" width="100%" height="300.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/promo2.jpg" width="100%" height="300.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/chat.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france4.jpg" width="100%" height="400.jpg"/></li>
+                <li><img onmouseover="appearButton(this)" onmouseout="desappearButton(this)"  src="images/france6.jpg" width="100%" height="400.jpg"/></li>
+                <div class="button">
+                    <div id="triangleL" class="prev">
+                    </div>
+                    <div id="triangleR" class="next">
+                    </div>
+                </div>
+        </div>
+        <div id="category">
+
+            <div class="Libros">
+                <h1> Livres </h1>
+            </div>
+
+            <div class="container-elmt">
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images/blazer.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Blazer Bleu</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images/chemise.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chemise</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images/sweat.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Sweat Rose</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 1.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Talon Noir</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 2.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chaussure</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 3.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Foulard</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 4.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Foulard</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 5.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chapeau rouge</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 6.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chapeau beige</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 7.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Robe</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Femme 2.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Robe</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 1.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chaussure bleu</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 2.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Chaussure noire</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 3.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Pantalon beige</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 4.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Jean</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 5.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Veste Noir</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 6.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Veste de costume</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 7.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Cravatte bleu</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images1/Vetement Homme 8.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Cravatte noire</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sous-element">
+                        <img src="images/lacoste.jpg" width="158.jpg" height="188.jpg">
+                    </div>
+                    <div class="data">
+                        <p>Polo noir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bot"> 
+            <ul id="bottom">
+                <li><p>
+                        Nos différentes catégories
+                    </p>
+                    <ul>
+                        <li><a href="Livres.html">Livres</a></li>
+                        <li><a href="Vetements.html">Vêtements</a></li>
+                        <li><a href="Musica.html">Musique</a></li>
+                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                    </ul>
+                </li>
+                <li><p>
+                        Devenir vendeur
+                    </p>
+                    <ul>
+                        <li><a href=".html">Vendre sur Ece Amazone</a></li>
+                        <li><a href="#">Devenir partenaire</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        Une question ?
+                    </p>
+                    <ul>
+                        <li><a href=".html">FAQ</a></li>
+                        <li><a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a></li>
+                        <li>01 02 03 04 05</li>
+                    </ul>
+                </li>>
+            </ul>
+        </div>
+         <div id="footer">Copyright &copy; 2019, Ece Amazone<br>
+         <a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a>
+         </div>
+</body>
+</html>
