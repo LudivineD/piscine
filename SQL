@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 30 avr. 2019 à 18:54
+-- Généré le :  mer. 01 mai 2019 à 13:18
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `Photo` varchar(100) NOT NULL,
   `Description` varchar(500) NOT NULL,
   `Video` varchar(100) NOT NULL,
-  `Prix` int(11) NOT NULL,
+  `Prix` float NOT NULL,
   `NombreVendu` int(11) NOT NULL,
   `EmailV` varchar(50) NOT NULL,
   PRIMARY KEY (`Id`),
