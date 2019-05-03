@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 01 mai 2019 à 13:18
+-- Généré le :  ven. 03 mai 2019 à 16:53
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 DROP TABLE IF EXISTS `livre`;
 CREATE TABLE IF NOT EXISTS `livre` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Auteur` varchar(100) NOT NULL,
   `Genre` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -77,9 +78,8 @@ CREATE TABLE IF NOT EXISTS `livre` (
 DROP TABLE IF EXISTS `musique`;
 CREATE TABLE IF NOT EXISTS `musique` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `Genre` varchar(100) NOT NULL,
   `Artiste` varchar(100) NOT NULL,
-  `Album` varchar(100) NOT NULL,
+  `Style` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -109,8 +109,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Nom` varchar(50) NOT NULL,
   `Prenom` varchar(50) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
-  `Paiement` int(11) NOT NULL,
-  `EmailV` varchar(50) NOT NULL,
+  `Ville` varchar(50) NOT NULL,
+  `CodePostal` int(11) NOT NULL,
+  `TypePaiement` varchar(30) NOT NULL,
+  `NumeroCarte` int(11) NOT NULL,
+  `NomCarte` varchar(50) NOT NULL,
+  `DateExpiration` date NOT NULL,
+  `Code` int(11) NOT NULL,
   PRIMARY KEY (`EmailU`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -123,6 +128,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 DROP TABLE IF EXISTS `vendeur`;
 CREATE TABLE IF NOT EXISTS `vendeur` (
   `EmailV` varchar(50) NOT NULL,
+  `Nom` varchar(100) NOT NULL,
   `Mdp` varchar(50) NOT NULL,
   `Photo` varchar(100) NOT NULL,
   `Image` varchar(100) NOT NULL,
@@ -139,7 +145,7 @@ DROP TABLE IF EXISTS `vetement`;
 CREATE TABLE IF NOT EXISTS `vetement` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Taille` int(11) NOT NULL,
-  `H/F` varchar(1) NOT NULL,
+  `Sexe` varchar(10) NOT NULL,
   `Couleur` varchar(50) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
