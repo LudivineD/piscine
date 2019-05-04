@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" /> 
+        <title>ECE Amazone</title>
+        <link rel="stylesheet" type="text/css" href="loginAdmin.css" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 function maBoucle(){
+                 setTimeout(function()
+                 {
+                    //alert('Bonjour ECE Paris!'); // affichera "Bonjour ECE Paris!" toutes les secondes
+                    maBoucle(); // relance la fonction
+                 }, 1000);
+                }
+                var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
+
+                $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
+                indexImg = $img.length - 1, // on définit l'index du dernier élément
+                i = 0, // on initialise un compteur
+                $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+                $img.css('display', 'none'); // on cache les images
+                $currentImg.css('display', 'block'); // on affiche seulement l'image courante
+
+                $carrousel.append('<div class="controls"> <span class="prev"></span> <span class="next"></span> </div>');
+
+                $('.next').click(function(){ // image suivante
+                 i++; // on incrémente le compteur
+                 if( i <= indexImg ){
+                 $img.css('display', 'none'); // on cache les images
+                 $currentImg = $img.eq(i); // on définit la nouvelle image
+                 $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                else{
+                    i=0;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                $('.prev').click(function(){ // image précédente
+                 i--;
+                 if( i >= 0 ){
+                // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
+                 $img.css('display', 'none');
+                 $currentImg = $img.eq(i);
+                 $currentImg.css('display', 'block');
+                }
+                else{
+                    i=4;
+                    $img.css('display', 'none'); // on cache les images
+                    $currentImg = $img.eq(i); // on définit la nouvelle image
+                    $currentImg.css('display', 'block'); // puis on l'affiche
+                }
+                });
+                maBoucle(); // on n’oublie pas de lancer la fonction une première fois
+                
+                /*funtion appearButton(){
+                $button = ('.button');
+                $button.css('left', 'auto');
+                }*/
+            });
+         </script>
+	 <script language="javascript">
+	 function getBasket() {
+	  var Prixtotal=0;
+    	  for (var i=0; i<sessionStorage.length; i++) {
+          var div = document.createElement("div");
+          var key = sessionStorage.key(i);
+          var item = sessionStorage.getItem(key);
+          var split_item = item.split(',');
+          var Id = split_item[0]
+          var Prix = split_item[1]
+          var Nom = split_item[2]
+         div.appendChild(document.createTextNode('Le Prix est de ' + Prix));
+         div.appendChild(document.createTextNode(' et votre Produit est ' + Nom));
+         document.getElementById("panierEce").appendChild(div);
+         var Prixtotal= Prixtotal + parseFloat(Prix, 10);
+         }
+         var div = document.createElement("div");
+         div.appendChild(document.createTextNode('Le Prix total est ' + Prixtotal));
+	 document.getElementById("panierEce").appendChild(div);
+          }
+	</script>
+
+    	  }}
+	 </script>
+    </head>
+    <body id="page">
+        <div class="container">
+            <div class="recherche">
+                <div class="logo">
+                    <a href="accueil1.html">
+                        <img src="images/eceamazone.png">
+                    </a>
+                </div>
+                <div class="barre">
+                    <form action="/search" class="search" id="searchthis" method="get">
+                        <input id="search" name="q" type="text" placeholder="Search here ....." />
+                        <input id="search-btn" type="submit" value="Rechercher" />
+                    </form>
+                </div>
+            </div>
+            <nav>
+                <ul id="menu-deroulant">
+                    <li><a href="#category">Catégories</a>
+                        <ul>
+                            <li><a href="Livres.html">Livres</a></li>
+                            <li><a href="Vetements.html">Vêtements</a></li>
+                            <li><a href="Musica.html">Musique</a></li>
+                            <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Ventesflash.html">Ventes flash</a></li>
+                    <li><a href="#">Vendre</a></li>
+                    <li><a href="Panier.html">Panier</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Mon compte</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="log">
+            <div id="panierEce">
+                <h1> Voici le contenu de votre panier </h1>
+		<script>
+			getBasket();
+			window.localStorage.clear();
+		</script>
+            </div>
+        </div>
+        <div id="bot"> 
+            <ul id="bottom">
+                <li><p>
+                        Nos différentes catégories
+                    </p>
+                    <ul>
+                        <li><a href="Livres.html">Livres</a></li>
+                        <li><a href="Vetements.html">Vêtements</a></li>
+                        <li><a href="Musica.html">Musique</a></li>
+                        <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
+                    </ul>
+                </li>
+                <li><p>
+                        Devenir vendeur
+                    </p>
+                    <ul>
+                        <li><a href=".html">Vendre sur Ece Amazone</a></li>
+                        <li><a href="#">Devenir partenaire</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        Une question ?
+                    </p>
+                    <ul>
+                        <li><a href=".html">FAQ</a></li>
+                        <li><a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a></li>
+                        <li>01 02 03 04 05</li>
+                    </ul>
+                </li>>
+            </ul>
+        </div>
+         <div id="footer">Copyright &copy; 2019, Ece Amazone<br>
+         <a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a>
+         </div>
+</body>
+</html>
