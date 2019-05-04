@@ -1,0 +1,35 @@
+<?php  
+
+  	$id = isset($_POST["id"])? $_POST["id"] : "";  
+ 
+ 	//identifier votre BDD  $database = "piscine";    
+ 	//connectez-vous dans votre BDD  
+ 	//Rappel: votre serveur = localhost et votre login = root et votre password = <rien>  
+ 	$database = "piscine";
+ 	$db_handle = mysqli_connect('localhost', 'root', '');  
+ 	$db_found = mysqli_select_db($db_handle, $database); 
+
+ 
+	if (isset($_POST["button1"])) {
+		if ($db_found) {
+    			$sql = "SELECT * FROM `item`";
+       			 if ($id != "") {
+             			//on cherche l'id
+             			$sql .= " WHERE Id='$id'";
+                 }
+        
+        	$result = mysqli_query($db_handle, $sql); 
+       		if (mysqli_num_rows($result) == 0) { 
+        		echo "id not found";}
+        	else {    
+        		//on trouve le livre recherché
+         		while ($data = mysqli_fetch_assoc($result)) {      
+         			echo "id: " . $data['Id'] . "<br>";      
+         			echo "Prix: " . $data['Prix'] . "<br>";      
+         			echo "Nom: " . $data['Nom'] . "<br>";}}}
+		else {    
+			echo "Database not found";   }}
+		//fermer la connexion
+		mysqli_close($db_handle);
+
+?>
