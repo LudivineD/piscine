@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 04 mai 2019 à 11:55
+-- Généré le :  sam. 04 mai 2019 à 17:55
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -83,6 +83,7 @@ INSERT INTO `item` (`Id`, `Nom`, `Photo`, `Description`, `Video`, `Prix`, `Nombr
 (109, 'Album Johnny Hallyday', '', '', '', 12.99, 1, 'julien.jaslet78@gmail.com'),
 (110, 'Guitare', '', '', '', 80.99, 1, 'julien.jaslet78@gmail.com'),
 (111, 'Enceinte', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(112, 'Album Sofiane', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
 (201, 'Balle de Basket', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
 (202, 'Balle de Basket', '', '', '', 24.99, 1, 'julien.jaslet78@gmail.com'),
 (203, 'Balle de Basket', '', '', '', 17.99, 1, 'julien.jaslet78@gmail.com'),
@@ -266,3 +267,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
