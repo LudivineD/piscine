@@ -1,0 +1,268 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  sam. 04 mai 2019 à 11:55
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `piscine`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `EmailA` varchar(50) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  PRIMARY KEY (`EmailA`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `item`
+--
+
+DROP TABLE IF EXISTS `item`;
+CREATE TABLE IF NOT EXISTS `item` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(50) NOT NULL,
+  `Photo` varchar(100) NOT NULL,
+  `Description` varchar(500) NOT NULL,
+  `Video` varchar(100) NOT NULL,
+  `Prix` float NOT NULL,
+  `NombreVendu` int(11) NOT NULL,
+  `EmailV` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `EmailV` (`EmailV`)
+) ENGINE=InnoDB AUTO_INCREMENT=321 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `item`
+--
+
+INSERT INTO `item` (`Id`, `Nom`, `Photo`, `Description`, `Video`, `Prix`, `NombreVendu`, `EmailV`) VALUES
+(1, 'Harry Potter', '', '', '', 8.99, 1, 'julien.jaslet78@gmail.com'),
+(2, 'Art de la Guerre', '', '', '', 9.99, 1, 'julien.jaslet78@gmail.com'),
+(3, 'Dragon Ball Super', '', '', '', 12.99, 1, 'julien.jaslet78@gmail.com'),
+(4, '13 reason why', '', '', '', 9.99, 1, 'julien.jaslet78@gmail.com'),
+(5, 'Le père Goriot', '', '', '', 6.99, 1, 'julien.jaslet78@gmail.com'),
+(6, 'Les Misérables', '', '', '', 12.99, 1, 'julien.jaslet78@gmail.com'),
+(7, 'Les Fables de La Fontaine', '', '', '', 4.99, 1, 'julien.jaslet78@gmail.com'),
+(8, 'A l\'ouest rien de nouveau', '', '', '', 8.99, 1, 'julien.jaslet78@gmail.com'),
+(9, 'L\'Avare', '', '', '', 7.99, 1, 'julien.jaslet78@gmail.com'),
+(10, 'Poésies complètes', '', '', '', 5.99, 1, 'julien.jaslet78@gmail.com'),
+(11, 'Voyages au centre de la Terre', '', '', '', 9.99, 1, 'julien.jaslet78@gmail.com'),
+(12, 'Au bonheur des dames', '', '', '', 13.99, 1, 'julien.jaslet78@gmail.com'),
+(101, 'Maitre Gims: Ceinture Noire', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(102, 'Album Ariana Grande', '', '', '', 16.99, 1, 'julien.jaslet78@gmail.com'),
+(103, 'Album Beethoven', '', '', '', 9.99, 1, 'julien.jaslet78@gmail.com'),
+(104, 'Album Mickael Jackson', '', '', '', 12.99, 1, 'julien.jaslet78@gmail.com'),
+(105, 'Album Ninho', '', '', '', 13.99, 1, 'julien.jaslet78@gmail.com'),
+(106, 'Album PNL 1', '', '', '', 15.99, 1, 'julien.jaslet78@gmail.com'),
+(107, 'Album PNL 2', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(108, 'Album Rihanna', '', '', '', 18.99, 1, 'julien.jaslet78@gmail.com'),
+(109, 'Album Johnny Hallyday', '', '', '', 12.99, 1, 'julien.jaslet78@gmail.com'),
+(110, 'Guitare', '', '', '', 80.99, 1, 'julien.jaslet78@gmail.com'),
+(111, 'Enceinte', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(201, 'Balle de Basket', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(202, 'Balle de Basket', '', '', '', 24.99, 1, 'julien.jaslet78@gmail.com'),
+(203, 'Balle de Basket', '', '', '', 17.99, 1, 'julien.jaslet78@gmail.com'),
+(204, 'Balle de Foot', '', '', '', 29.99, 1, 'julien.jaslet78@gmail.com'),
+(205, 'Balle de Foot', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(206, 'Balle de Rugby', '', '', '', 17.99, 1, 'julien.jaslet78@gmail.com'),
+(207, 'Balle de Rugby', '', '', '', 27.99, 1, 'julien.jaslet78@gmail.com'),
+(208, 'Gant de Foot', '', '', '', 29.99, 1, 'julien.jaslet78@gmail.com'),
+(209, 'Gant de Foot', '', '', '', 18.99, 1, 'julien.jaslet78@gmail.com'),
+(210, 'Sac de Golf', '', '', '', 45.99, 1, 'julien.jaslet78@gmail.com'),
+(211, 'Sac de Golf', '', '', '', 59.99, 1, 'julien.jaslet78@gmail.com'),
+(212, 'Raquette de Tennis', '', '', '', 39.99, 1, 'julien.jaslet78@gmail.com'),
+(213, 'Raquette de Tennis', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(214, 'Batte de Baseball', '', '', '', 29.99, 1, 'julien.jaslet78@gmail.com'),
+(215, 'Batte de Baseball', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(216, 'Tour Gaming', '', '', '', 899.99, 1, 'julien.jaslet78@gmail.com'),
+(217, 'Tour Gaming', '', '', '', 999.99, 1, 'julien.jaslet78@gmail.com'),
+(218, 'PC portable Gaming', '', '', '', 599.99, 1, 'julien.jaslet78@gmail.com'),
+(219, 'PS4', '', '', '', 299.99, 1, 'julien.jaslet78@gmail.com'),
+(220, 'Enceinte', '', '', '', 59.99, 1, 'julien.jaslet78@gmail.com'),
+(221, 'Casque Noir', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(222, 'Casque Rouge', '', '', '', 39.99, 1, 'julien.jaslet78@gmail.com'),
+(301, 'Blazer Bleu', '', '', '', 29.99, 1, 'julien.jaslet78@gmail.com'),
+(302, 'Chemise', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(303, 'Sweat Rose', '', '', '', 39.99, 1, 'julien.jaslet78@gmail.com'),
+(304, 'Talon Noir', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(305, 'Chaussure', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(306, 'Foulard', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(307, 'Foulard', '', '', '', 24.99, 1, 'julien.jaslet78@gmail.com'),
+(308, 'Chapeau rouge', '', '', '', 19.99, 1, 'julien.jaslet78@gmail.com'),
+(309, 'Chapeau beige', '', '', '', 22.99, 1, 'julien.jaslet78@gmail.com'),
+(310, 'Robe', '', '', '', 59.99, 1, 'julien.jaslet78@gmail.com'),
+(311, 'Robe', '', '', '', 49.99, 1, 'julien.jaslet78@gmail.com'),
+(312, 'Chaussure bleu', '', '', '', 27.99, 1, 'julien.jaslet78@gmail.com'),
+(313, 'Chaussure noire', '', '', '', 24.99, 1, 'julien.jaslet78@gmail.com'),
+(314, 'Pantalon beige', '', '', '', 17.99, 1, 'julien.jaslet78@gmail.com'),
+(315, 'Jean', '', '', '', 16.99, 1, 'julien.jaslet78@gmail.com'),
+(316, 'Veste Noir', '', '', '', 59.99, 1, 'julien.jaslet78@gmail.com'),
+(317, 'Veste de costume', '', '', '', 59.99, 1, 'julien.jaslet78@gmail.com'),
+(318, 'Cravatte bleu', '', '', '', 4.99, 1, 'julien.jaslet78@gmail.com'),
+(319, 'Cravatte noire', '', '', '', 3.99, 1, 'julien.jaslet78@gmail.com'),
+(320, 'Polo noir', '', '', '', 11.99, 1, 'julien.jaslet78@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `livre`
+--
+
+DROP TABLE IF EXISTS `livre`;
+CREATE TABLE IF NOT EXISTS `livre` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Auteur` varchar(100) NOT NULL,
+  `Genre` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `musique`
+--
+
+DROP TABLE IF EXISTS `musique`;
+CREATE TABLE IF NOT EXISTS `musique` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Artiste` varchar(100) NOT NULL,
+  `Style` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sport`
+--
+
+DROP TABLE IF EXISTS `sport`;
+CREATE TABLE IF NOT EXISTS `sport` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Genre` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `EmailU` varchar(50) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  `Nom` varchar(50) NOT NULL,
+  `Prenom` varchar(50) NOT NULL,
+  `Adresse` varchar(150) NOT NULL,
+  `Ville` varchar(50) NOT NULL,
+  `CodePostal` int(11) NOT NULL,
+  `TypePaiement` varchar(30) NOT NULL,
+  `NumeroCarte` int(11) NOT NULL,
+  `NomCarte` varchar(50) NOT NULL,
+  `DateExpiration` date NOT NULL,
+  `Code` int(11) NOT NULL,
+  PRIMARY KEY (`EmailU`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vendeur`
+--
+
+DROP TABLE IF EXISTS `vendeur`;
+CREATE TABLE IF NOT EXISTS `vendeur` (
+  `EmailV` varchar(50) NOT NULL,
+  `Nom` varchar(100) NOT NULL,
+  `Mdp` varchar(50) NOT NULL,
+  `Photo` varchar(100) NOT NULL,
+  `Image` varchar(100) NOT NULL,
+  PRIMARY KEY (`EmailV`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`EmailV`, `Nom`, `Mdp`, `Photo`, `Image`) VALUES
+('julien.jaslet78@gmail.com', 'Jaslet\r\n', 'Jaslet2019', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vetement`
+--
+
+DROP TABLE IF EXISTS `vetement`;
+CREATE TABLE IF NOT EXISTS `vetement` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Taille` int(11) NOT NULL,
+  `Sexe` varchar(10) NOT NULL,
+  `Couleur` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`EmailV`) REFERENCES `vendeur` (`EmailV`);
+
+--
+-- Contraintes pour la table `livre`
+--
+ALTER TABLE `livre`
+  ADD CONSTRAINT `livre_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `musique`
+--
+ALTER TABLE `musique`
+  ADD CONSTRAINT `musique_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `sport`
+--
+ALTER TABLE `sport`
+  ADD CONSTRAINT `sport_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+
+--
+-- Contraintes pour la table `vetement`
+--
+ALTER TABLE `vetement`
+  ADD CONSTRAINT `vetement_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `item` (`Id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
