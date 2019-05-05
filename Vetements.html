@@ -1,3 +1,15 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+        //Ok we got a POST, probably from a FORM, read from $_POST.
+        var_dump($_PSOT); //Use this to see what info we got!
+    }
+    else
+    {
+       //You could assume you got a GET
+       var_dump($_GET); //Use this to see what info we got!
+    }
+ ?>
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -6,7 +18,26 @@
         <title>ECE Amazone</title>
         <link rel="stylesheet" type="text/css" href="categcss.css" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
+        <script>	
+        function getproductData(productId)
+        {
+            $.post(                             
+                "getItem.php",                     
+                {
+                    id: productId
+                }                               
+            ).done(                             
+                function(data)
+                {
+		   var length = 9;
+  		   var generatedId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, length);
+                   window.sessionStorage.setItem(generatedId, data);
+		   var meta1 = window.sessionStorage.getItem(generatedId);
+		   alert(meta1);
+                }
+            );
+        }
+    
             $(document).ready(function(){
                  function maBoucle(){
                  setTimeout(function()
@@ -62,7 +93,23 @@
                 $button.css('left', 'auto');
                 }*/
             });
-         </script>
+	</script>
+	<script language="javascript">
+	function getBasket() {
+    	 for (var i=0; i<localStorage.length; i++) {
+          var key = localStorage.key(i);
+          var item = localStorage.getItem(key);
+          var split_item = item.split(',');
+          var Id = split_item[1]
+          var Prix = split_item[2]
+          var Nom = split_item[3]
+          $('#panierEce').append("<div class='classname'>Price</div>");
+          $('#panierEce').append("< placeholder= Prix />");
+          $('#panierEce').append("<div class='classname'>Nom</div>");
+          $('#panierEce').append("< placeholder= Nom />");
+
+          }}
+	</script>
     </head>
     <body id="page">
         <div class="container">
@@ -86,14 +133,14 @@
                             <li><a href="Livres.html">Livres</a></li>
                             <li><a href="Vetements.html">Vêtements</a></li>
                             <li><a href="Musica.html">Musique</a></li>
-                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                            <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
                         </ul>
                     </li>
                     <li><a href="Ventesflash.html">Ventes flash</a></li>
-                    <li><a href="#">Vendre</a></li>
-                    <li><a href="#">Panier</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li><a href="#">Mon compte</a></li>
+                    <li><a href="Vendre.html">Vendre</a></li>
+                    <li><a href="Panier.html">Panier</a></li>
+                    <li><a href="loginAdmin.html">Admin</a></li>
+                    <li><a href="Moncompte.html">Mon compte</a></li>
                 </ul>
             </nav>
         </div>
@@ -122,7 +169,8 @@
                         <img src="images/blazer.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Blazer Bleu</p>
+                        <p>Blazer Bleu</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(301)">
                     </div>
                 </div>
                 <div class="element">
@@ -130,7 +178,8 @@
                         <img src="images/chemise.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chemise</p>
+                        <p>Chemise</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(302)">
                     </div>
                 </div>
                 <div class="element">
@@ -138,7 +187,8 @@
                         <img src="images/sweat.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Sweat Rose</p>
+                        <p>Sweat Rose</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(303)">
                     </div>
                 </div>
                 <div class="element">
@@ -146,7 +196,8 @@
                         <img src="images1/Vetement Femme 1.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Talon Noir</p>
+                        <p>Talon Noir</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(304)">
                     </div>
                 </div>
                 <div class="element">
@@ -154,7 +205,8 @@
                         <img src="images1/Vetement Femme 2.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chaussure</p>
+                        <p>Chaussure</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(305)">
                     </div>
                 </div>
                 <div class="element">
@@ -162,7 +214,8 @@
                         <img src="images1/Vetement Femme 3.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Foulard</p>
+                        <p>Foulard</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(306)">
                     </div>
                 </div>
                 <div class="element">
@@ -170,7 +223,8 @@
                         <img src="images1/Vetement Femme 4.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Foulard</p>
+                        <p>Foulard</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(307)">
                     </div>
                 </div>
                 <div class="element">
@@ -178,7 +232,8 @@
                         <img src="images1/Vetement Femme 5.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chapeau rouge</p>
+                        <p>Chapeau rouge</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(308)">
                     </div>
                 </div>
                 <div class="element">
@@ -186,7 +241,8 @@
                         <img src="images1/Vetement Femme 6.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chapeau beige</p>
+                        <p>Chapeau beige</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(309)">
                     </div>
                 </div>
                 <div class="element">
@@ -194,7 +250,8 @@
                         <img src="images1/Vetement Femme 7.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Robe</p>
+                        <p>Robe</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(310)">
                     </div>
                 </div>
                 <div class="element">
@@ -202,7 +259,8 @@
                         <img src="images1/Vetement Femme 2.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Robe</p>
+                        <p>Robe</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(311)">
                     </div>
                 </div>
                 <div class="element">
@@ -210,7 +268,8 @@
                         <img src="images1/Vetement Homme 1.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chaussure bleu</p>
+                        <p>Chaussure bleu</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(312)">
                     </div>
                 </div>
                 <div class="element">
@@ -218,7 +277,8 @@
                         <img src="images1/Vetement Homme 2.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Chaussure noire</p>
+                        <p>Chaussure noire</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(313)">
                     </div>
                 </div>
                 <div class="element">
@@ -226,7 +286,8 @@
                         <img src="images1/Vetement Homme 3.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Pantalon beige</p>
+                        <p>Pantalon beige</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(314)">
                     </div>
                 </div>
                 <div class="element">
@@ -234,7 +295,8 @@
                         <img src="images1/Vetement Homme 4.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Jean</p>
+                        <p>Jean</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(315)">
                     </div>
                 </div>
                 <div class="element">
@@ -242,7 +304,8 @@
                         <img src="images1/Vetement Homme 5.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Veste Noir</p>
+                        <p>Veste Noir</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(316)">
                     </div>
                 </div>
                 <div class="element">
@@ -250,7 +313,8 @@
                         <img src="images1/Vetement Homme 6.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Veste de costume</p>
+                        <p>Veste de costume</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(317)">
                     </div>
                 </div>
                 <div class="element">
@@ -258,7 +322,8 @@
                         <img src="images1/Vetement Homme 7.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Cravatte bleu</p>
+                        <p>Cravatte bleu</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(318)">
                     </div>
                 </div>
                 <div class="element">
@@ -266,7 +331,8 @@
                         <img src="images1/Vetement Homme 8.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Cravatte noire</p>
+                        <p>Cravatte noire</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(319)">
                     </div>
                 </div>
                 <div class="element">
@@ -274,7 +340,8 @@
                         <img src="images/lacoste.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Polo noir</p>
+                        <p>Polo noir</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(320)">
                     </div>
                 </div>
             </div>
@@ -288,7 +355,7 @@
                         <li><a href="Livres.html">Livres</a></li>
                         <li><a href="Vetements.html">Vêtements</a></li>
                         <li><a href="Musica.html">Musique</a></li>
-                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                        <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
                     </ul>
                 </li>
                 <li><p>
