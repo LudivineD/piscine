@@ -1,3 +1,15 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+        //Ok we got a POST, probably from a FORM, read from $_POST.
+        var_dump($_PSOT); //Use this to see what info we got!
+    }
+    else
+    {
+       //You could assume you got a GET
+       var_dump($_GET); //Use this to see what info we got!
+    }
+ ?>
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -6,7 +18,26 @@
         <title>ECE Amazone</title>
         <link rel="stylesheet" type="text/css" href="categcss.css" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
+        <script>	
+        function getproductData(productId)
+        {
+            $.post(                             
+                "getItem.php",                     
+                {
+                    id: productId
+                }                               
+            ).done(                             
+                function(data)
+                {
+		   var length = 9;
+  		   var generatedId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, length);
+                   window.sessionStorage.setItem(generatedId, data);
+		   var meta1 = window.sessionStorage.getItem(generatedId);
+		   alert(meta1);
+                }
+            );
+        }
+    
             $(document).ready(function(){
                  function maBoucle(){
                  setTimeout(function()
@@ -62,7 +93,23 @@
                 $button.css('left', 'auto');
                 }*/
             });
-         </script>
+	</script>
+	<script language="javascript">
+	function getBasket() {
+    	 for (var i=0; i<localStorage.length; i++) {
+          var key = localStorage.key(i);
+          var item = localStorage.getItem(key);
+          var split_item = item.split(',');
+          var Id = split_item[1]
+          var Prix = split_item[2]
+          var Nom = split_item[3]
+          $('#panierEce').append("<div class='classname'>Price</div>");
+          $('#panierEce').append("< placeholder= Prix />");
+          $('#panierEce').append("<div class='classname'>Nom</div>");
+          $('#panierEce').append("< placeholder= Nom />");
+
+          }}
+	</script>
     </head>
     <body id="page">
         <div class="container">
@@ -86,14 +133,14 @@
                             <li><a href="Livres.html">Livres</a></li>
                             <li><a href="Vetements.html">Vêtements</a></li>
                             <li><a href="Musica.html">Musique</a></li>
-                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                            <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
                         </ul>
                     </li>
                     <li><a href="Ventesflash.html">Ventes flash</a></li>
-                    <li><a href="#">Vendre</a></li>
-                    <li><a href="#">Panier</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li><a href="#">Mon compte</a></li>
+                    <li><a href="Vendre.html">Vendre</a></li>
+                    <li><a href="Panier.html">Panier</a></li>
+                    <li><a href="loginAdmin.html">Admin</a></li>
+                    <li><a href="Moncompte.html">Mon compte</a></li>
                 </ul>
             </nav>
         </div>
@@ -122,7 +169,8 @@
                         <img src="images/ceinturenoire.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Maitre Gims: Ceinture Noire</p>
+                        <p>Maitre Gims: Ceinture Noire</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(101)">
                     </div>
                 </div>
                 <div class="element">
@@ -130,7 +178,8 @@
                         <img src="images1/Album Ariana grande.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Ariana Grande</p>
+                        <p>Album Ariana Grande</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(102)">
                     </div>
                 </div>
                 <div class="element">
@@ -138,7 +187,8 @@
                         <img src="images1/Album Beethoven.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Beethoven</p>
+                        <p>Album Beethoven</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(103)">
                     </div>
                 </div>
                 <div class="element">
@@ -146,7 +196,8 @@
                         <img src="images1/Album Michael Jackson.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>ALbum Mickael Jackson</p>
+                        <p>Album Mickael Jackson</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(104)">
                     </div>
                 </div>
                 <div class="element">
@@ -154,7 +205,8 @@
                         <img src="images1/ALbum Ninho.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Ninho</p>
+                        <p>Album Ninho</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(105)">
                     </div>
                 </div>
                 <div class="element">
@@ -162,7 +214,8 @@
                         <img src="images1/Album Pnl 1.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album PNL 1</p>
+                        <p>Album PNL 1</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(106)">
                     </div>
                 </div>
                 <div class="element">
@@ -170,7 +223,8 @@
                         <img src="images1/Album Pnl 2.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album PNL 2</p>
+                        <p>Album PNL 2</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(107)">
                     </div>
                 </div>
                 <div class="element">
@@ -178,7 +232,8 @@
                         <img src="images1/Album Rihanna.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Rihanna</p>
+                        <p>Album Rihanna</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(108)">
                     </div>
                 </div>
                 <div class="element">
@@ -186,7 +241,8 @@
                         <img src="images1/Album Sofiane.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Sofiane</p>
+                        <p>Album Sofiane</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(112)">
                     </div>
                 </div>
                 <div class="element">
@@ -194,7 +250,8 @@
                         <img src="images/johnnyhallyday.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Album Johnny Hallyday</p>
+                        <p>Album Johnny Hallyday</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(109)">
                     </div>
                 </div>
                 <div class="element">
@@ -202,7 +259,8 @@
                         <img src="images/guitare.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Guitare</p>
+                        <p>Guitare</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(110)">
                     </div>
                 </div>
                 <div class="element">
@@ -210,7 +268,8 @@
                         <img src="images/enceinte1.jpg" width="158.jpg" height="188.jpg">
                     </div>
                     <div class="data">
-                        <p>Enceinte</p>
+                        <p>Enceinte</p><br />
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(111)">
                     </div>
                 </div>
             </div>
@@ -224,7 +283,7 @@
                         <li><a href="Livres.html">Livres</a></li>
                         <li><a href="Vetements.html">Vêtements</a></li>
                         <li><a href="Musica.html">Musique</a></li>
-                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                        <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
                     </ul>
                 </li>
                 <li><p>
