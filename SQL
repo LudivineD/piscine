@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 03 mai 2019 à 16:53
+-- Généré le :  Dim 05 mai 2019 à 21:12
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -53,7 +53,46 @@ CREATE TABLE IF NOT EXISTS `item` (
   `EmailV` varchar(50) NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `EmailV` (`EmailV`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `item`
+--
+
+INSERT INTO `item` (`Id`, `Nom`, `Photo`, `Description`, `Video`, `Prix`, `NombreVendu`, `EmailV`) VALUES
+(1, 'Harry Potter', 'C:\\wamp64\\www\\Amazon\\images\\HP.jpg', 'La série de sept romans raconte les aventures d\'un jeune sorcier nommé Harry Potter et de ses amis Ron Weasley et Hermione Granger à l\'école de sorcellerie Poudlard, dirigée par Albus Dumbledore.', '', 10, 0, 'email1'),
+(2, 'Art de la guerre', 'C:\\wamp64\\www\\Amazon\\images\\art.jpg', 'L’Art de la guerre est un court traité de stratégie militaire chinois, datant de la période des Printemps et Automnes.', '', 11, 0, 'email1'),
+(3, 'Dragon Ball Super', 'C:\\wamp64\\www\\Amazon\\images\\dragon.jpg', 'Six mois après la bataille contre Boo, la paix sur Terre est à nouveau menacée par un mystérieux personnage : Beerus, le Dieu de la Destruction. Il parcourt l\'univers à la recherche du Super Saiyan Divin.', '', 9, 0, 'email1'),
+(4, '13 reasons why', 'C:\\wamp64\\www\\Amazon\\images\\13.jpg', 'Clay Jensen découvre sous son porche au retour du lycée une mystérieuse boîte portant son nom. À l\'intérieur, des cassettes enregistrées par Hannah Baker, une camarade de classe qui s\'est tragiquement suicidée deux semaines auparavant.', '', 15, 0, 'email1'),
+(5, 'Le père Goriot', 'C:\\wamp64\\www\\Amazon\\images\\Livre Balzac.jpg', 'Le Père Goriot est un roman d’Honoré de Balzac, commencé à Saché en 1834, dont la publication commence dans la Revue de Paris et qui paraît en 1842 en librairie. Il fait partie des Scènes de la vie privée de La Comédie humaine.', '', 12, 0, 'email1'),
+(6, 'Les Misérables', 'C:\\wamp64\\www\\Amazon\\images\\Livre Hugo.jpg', 'Les Misérables est une comédie musicale adaptée du roman éponyme de Victor Hugo par Claude-Michel Schönberg et Alain Boublil et Jean-Marc Natel, et Herbert Kretzmer.', '', 8, 0, 'email1'),
+(7, 'Les fables de la Fontaine', 'C:\\wamp64\\www\\Amazon\\images\\Livre La Fontaine.jpg', 'Les Fables choisies, mises en vers par M. de La Fontaine, appelées simplement Fables de La Fontaine, sont trois recueils de deux cent quarante trois fables allégoriques publiés par Jean de La Fontaine entre 1668 et 1694.', '', 7, 0, 'email1'),
+(8, 'A l\'ouest rien de nouveau', 'C:\\wamp64\\www\\Amazon\\images\\Livre Maria Remarque.jpg', 'À l\'Ouest, rien de nouveau est un roman de Erich Maria Remarque paru en 1929. Le roman décrit la Première Guerre mondiale vue par un jeune soldat volontaire allemand sur le front ouest.', '', 10, 0, 'email1'),
+(9, 'L\'Avare', 'C:\\wamp64\\www\\Amazon\\images\\Livre Molière.jpg', 'L\'Avare est une comédie de Molière en cinq actes et en prose, adaptée de La Marmite de Plaute et représentée pour la première fois sur la scène du Palais-Royal le 9 septembre 1668. Il s\'agit d\'une comédie de caractère dont le personnage principal, Harpagon, est caractérisé par son avarice caricaturale.', '', 11, 0, 'email1'),
+(10, 'Poésies complètes', 'C:\\wamp64\\www\\Amazon\\images\\Livre Rimbaud.jpg', 'Poesies completes / Arthur Rimbaud; avec preface de Paul Verlaine et notes de l\'editeur. Date de l\'edition originale: 1895. Ce livre est la reproduction fidele d\'une oeuvre publiee avant 1920.', '', 13, 0, 'email1'),
+(11, 'Voyage au centre de la terre', 'C:\\wamp64\\www\\Amazon\\images\\Livre Vernes.jpg', 'Voyage au centre de la Terre est un roman d\'aventures, écrit en 1864 par Jules Verne. Il fut publié en édition originale in-18 le 25 novembre 1864, puis en grand in-octavo le 13 mai 1867. Le texte de 1867 comporte deux chapitres de plus que celui de 1864.', '', 12, 0, 'email1'),
+(12, 'Au Bonheur des Dames', 'C:\\wamp64\\www\\Amazon\\images\\Livre Zola.jpg', 'Au Bonheur des Dames est un roman d’Émile Zola publié en 1883, prépublié dès décembre 1882 dans Gil Blas, onzième volume de la suite romanesque Les Rougon-Macquart. À travers une histoire sentimentale, le roman entraîne le lecteur dans le monde des grands magasins, l’une des innovations du Second Empire.', '', 13, 0, 'email1'),
+(13, 'Maitre Gims', '', 'Album Maitre Gims', '', 16, 0, 'email1'),
+(14, 'Ariana Grande', 'C:\\wamp64\\www\\Amazon\\images\\Album Ariana grande.jpg', 'Album Ariana Grande', '', 16, 0, 'email1'),
+(15, 'Beethoven', 'C:\\wamp64\\www\\Amazon\\images\\Album Beethoven.jpg', 'Album Beethoven', '', 13, 0, 'email1'),
+(16, 'Mickael Jackson', 'C:\\wamp64\\www\\Amazon\\images\\Album Michael Jackson.jpg', 'Album Mickael Jackson', '', 14, 0, 'email1'),
+(17, 'Ninho', 'C:\\wamp64\\www\\Amazon\\images\\Album Ninho.jpg', 'Album Ninho', '', 18, 0, 'email1'),
+(18, 'PNL', 'C:\\wamp64\\www\\Amazon\\images\\Album Pnl 1.jpg', 'Album PNL 1', '', 15, 0, 'email1'),
+(19, 'PNL', 'C:\\wamp64\\www\\Amazon\\images\\Album Pnl 1.jpg', 'Album PNL 2', '', 15, 0, 'email1'),
+(20, 'Rihanna', 'C:\\wamp64\\www\\Amazon\\images\\Album Rihanna.jpg', 'Album Rihanna', '', 16, 0, 'email1'),
+(21, 'Sofiane', 'C:\\wamp64\\www\\Amazon\\images\\Album Sofiane.jpg', 'Album Sofiane', '', 14, 0, 'email1'),
+(22, 'Johnny Hallyday', '', 'Album Johnny Hallyday', '', 16, 0, 'email1'),
+(23, 'Guitare', '', 'Guitare neuve', '', 60, 0, 'email1'),
+(24, 'Enceinte', 'C:\\wamp64\\www\\Amazon\\images\\enceinte.jpg', 'Enceinte neuve', '', 55, 0, 'email1'),
+(25, 'Balle de basket', 'C:\\wamp64\\www\\Amazon\\images\\Sport Basket 1.jpg', 'Ballon', '', 15, 0, 'email1'),
+(26, 'Balle de basket', 'C:\\wamp64\\www\\Amazon\\images\\Sport Basket 2.jpg', 'Ballon', '', 16, 0, 'email1'),
+(27, 'Balle de foot', 'C:\\wamp64\\www\\Amazon\\images\\Sport Foot 1.jpg', 'Ballon', '', 17, 0, 'email1'),
+(28, 'Gants de foot', 'C:\\wamp64\\www\\Amazon\\images\\Sport foot 3.jpg', 'Gants', '', 14, 0, 'email1'),
+(29, 'Balle de rugby', 'C:\\wamp64\\www\\Amazon\\images\\Sport Rugby 1.jpg', 'Ballon', '', 17, 0, 'email1'),
+(30, 'Sac de golf', 'C:\\wamp64\\www\\Amazon\\images\\Sport Golf 1.jpg', 'Accessoire de golf', '', 30, 0, 'email1'),
+(31, 'Raquette de Tennis', 'C:\\wamp64\\www\\Amazon\\images\\Sport Tennis 1.jpg', 'Raquette', '', 25, 0, 'email1'),
+(32, 'Batte de Baseball', 'C:\\wamp64\\www\\Amazon\\images\\Sport Baseball 1.jpg', 'Batte', '', 30, 6, 'email1'),
+(33, 'Tour Gaming', 'C:\\wamp64\\www\\Amazon\\images\\Loisir Gamer 1.jpg', 'Tour', '', 100, 5, 'email1');
 
 -- --------------------------------------------------------
 
@@ -67,7 +106,25 @@ CREATE TABLE IF NOT EXISTS `livre` (
   `Auteur` varchar(100) NOT NULL,
   `Genre` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `livre`
+--
+
+INSERT INTO `livre` (`Id`, `Auteur`, `Genre`) VALUES
+(1, 'J. K. Rowling', 'Fantasy'),
+(2, 'Sun Tzu', 'Militaire'),
+(3, 'Akira Toriyama', 'Manga'),
+(4, 'Jay Asher', 'Drame'),
+(5, 'Honoré de Balzac', 'Fiction'),
+(6, 'Victor Hugo', 'Fiction'),
+(7, 'Jean de la Fontaine', 'Fables'),
+(8, 'Erich Maria Remarque', 'Fiction'),
+(9, 'Molière', 'Théatre'),
+(10, 'Rimbaud', 'Poésie'),
+(11, 'Jules Verne', 'Aventure'),
+(12, 'Emile Zola', 'Fiction');
 
 -- --------------------------------------------------------
 
@@ -81,7 +138,23 @@ CREATE TABLE IF NOT EXISTS `musique` (
   `Artiste` varchar(100) NOT NULL,
   `Style` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `musique`
+--
+
+INSERT INTO `musique` (`Id`, `Artiste`, `Style`) VALUES
+(13, 'Maitre gims', 'Hip-hop'),
+(14, 'Ariana grande', 'Pop'),
+(15, 'Beethoven', 'Classique'),
+(16, 'Mickael Jackson', 'Pop'),
+(17, 'Ninho', 'Rap'),
+(18, 'PNL', 'Rap'),
+(19, 'PNL', 'Rap'),
+(20, 'Rihanna', 'Pop'),
+(21, 'Sofiane', 'Rap'),
+(22, 'Johnny Hallyday', 'Rock');
 
 -- --------------------------------------------------------
 
@@ -94,7 +167,22 @@ CREATE TABLE IF NOT EXISTS `sport` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Genre` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `sport`
+--
+
+INSERT INTO `sport` (`Id`, `Genre`) VALUES
+(25, 'Sport'),
+(26, 'Sport'),
+(27, 'Sport'),
+(28, 'Sport'),
+(29, 'Sport'),
+(30, 'Sport'),
+(31, 'Sport'),
+(32, 'Sport'),
+(33, 'Loisir');
 
 -- --------------------------------------------------------
 
@@ -134,6 +222,13 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `Image` varchar(100) NOT NULL,
   PRIMARY KEY (`EmailV`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`EmailV`, `Nom`, `Mdp`, `Photo`, `Image`) VALUES
+('email1', 'Vendeur 1', 'Vendeur 1', '', '');
 
 -- --------------------------------------------------------
 
