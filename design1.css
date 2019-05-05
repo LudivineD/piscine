@@ -38,6 +38,7 @@
 /* Au survol des li du menu on replace les sous menus */
     color: #FFD700;
 }
+
 .recherche{
     display: flex;
 }
@@ -114,17 +115,19 @@
 }
 #category{
     padding:18px;
-    display:flex;
-    flex-wrap: wrap; /* si pas assez de place alors revient a la ligne*/
-    justify-content: space-around;
     background-color:#191970;
 }
-#category > div{
+#category .element{
     height:328px;
     width:228px;
     border:solid;
     border-radius: 38px;
     margin-top:8px;
+}
+.container-elmt{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 h2{
     width:200px;
@@ -184,4 +187,7 @@ h6{
     color: white;
     padding:8px;
     text-align: center;
+}
+#bottom a:hover{
+    color: #FFD700;
 }
