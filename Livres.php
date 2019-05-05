@@ -126,10 +126,10 @@
                 <ul id="menu-deroulant">
                     <li><a href="accueil1.html#category">Catégories</a>
                         <ul>
-                            <li><a href="Livres.html">Livres</a></li>
-                            <li><a href="Vetements.html">Vêtements</a></li>
-                            <li><a href="Musica.html">Musique</a></li>
-                            <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
+                            <li><a href="Livres.php">Livres</a></li>
+                            <li><a href="Vetements.php">Vêtements</a></li>
+                            <li><a href="Musica.php">Musique</a></li>
+                            <li><a href="SportsetLoisir.php">Sports & Loisir </a></li>
                         </ul>
                     </li>
                     <li><a href="Ventesflash.html">Ventes flash</a></li>
@@ -480,10 +480,10 @@
                         Nos différentes catégories
                     </p>
                      <ul>
-                        <li><a href="Livres.html">Livres</a></li>
-                        <li><a href="Vetements.html">Vêtements</a></li>
-                        <li><a href="Musica.html">Musique</a></li>
-                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                        <li><a href="Livres.php">Livres</a></li>
+                        <li><a href="Vetements.php">Vêtements</a></li>
+                        <li><a href="Musica.php">Musique</a></li>
+                        <li><a href="Sports et Loisir.php">Sports & Loisir </a></li>
                     </ul>
                 </li>
                 <li><p>
