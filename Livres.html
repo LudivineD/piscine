@@ -1,3 +1,15 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+        //Ok we got a POST, probably from a FORM, read from $_POST.
+        var_dump($_PSOT); //Use this to see what info we got!
+    }
+    else
+    {
+       //You could assume you got a GET
+       var_dump($_GET); //Use this to see what info we got!
+    }
+ ?>
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -6,7 +18,26 @@
         <title>ECE Amazone</title>
         <link rel="stylesheet" type="text/css" href="categcss.css" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
+        <script>	
+        function getproductData(productId)
+        {
+            $.post(                             
+                "getItem.php",                     
+                {
+                    id: productId
+                }                               
+            ).done(                             
+                function(data)
+                {
+		   var length = 9;
+  		   var generatedId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, length);
+                   window.sessionStorage.setItem(generatedId, data);
+		   var meta1 = window.sessionStorage.getItem(generatedId);
+		   alert(meta1);
+                }
+            );
+        }
+    
             $(document).ready(function(){
                  function maBoucle(){
                  setTimeout(function()
@@ -62,20 +93,23 @@
                 $button.css('left', 'auto');
                 }*/
             });
-         </script>
-         <script>
-            function visibilite(thingId)
-            {
-            var targetElement;
-            targetElement = document.getElementById(thingId) ;
-            if (targetElement.style.display == "none")
-            {
-            targetElement.style.display = "" ;
-            } else {
-            targetElement.style.display = "none" ;
-            }
-            }
-        </script>
+	</script>
+	<script language="javascript">
+	function getBasket() {
+    	 for (var i=0; i<localStorage.length; i++) {
+          var key = localStorage.key(i);
+          var item = localStorage.getItem(key);
+          var split_item = item.split(',');
+          var Id = split_item[1]
+          var Prix = split_item[2]
+          var Nom = split_item[3]
+          $('#panierEce').append("<div class='classname'>Price</div>");
+          $('#panierEce').append("< placeholder= Prix />");
+          $('#panierEce').append("<div class='classname'>Nom</div>");
+          $('#panierEce').append("< placeholder= Nom />");
+
+          }}
+	</script>
     </head>
     <body id="page">
         <div class="container">
@@ -99,14 +133,14 @@
                             <li><a href="Livres.html">Livres</a></li>
                             <li><a href="Vetements.html">Vêtements</a></li>
                             <li><a href="Musica.html">Musique</a></li>
-                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                            <li><a href="SportsetLoisir.html">Sports & Loisir </a></li>
                         </ul>
                     </li>
                     <li><a href="Ventesflash.html">Ventes flash</a></li>
-                    <li><a href="#">Vendre</a></li>
-                    <li><a href="#">Panier</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li><a href="#">Mon compte</a></li>
+                    <li><a href="Vendre.html">Vendre</a></li>
+                    <li><a href="Panier.html">Panier</a></li>
+                    <li><a href="loginAdmin.html">Admin</a></li>
+                    <li><a href="Moncompte.html">Mon compte</a></li>
                 </ul>
             </nav>
         </div>
@@ -136,7 +170,7 @@
                     </div>
                     <div class="data">
                         <p>Harry Potter</p>
-                        <button type="button">Ajouter au panier</button>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(1)">
                     </div>
                 </div>
                 <div class="element">
@@ -145,6 +179,7 @@
                     </div>
                     <div class="data">
                         <p>Art de la guerre</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(2)">
                     </div>
                 </div>
                 <div class="element">
@@ -153,6 +188,7 @@
                     </div>
                     <div class="data">
                         <p>Dragon Ball Super</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(3)">
                     </div>
                 </div>
                 <div class="element">
@@ -161,6 +197,7 @@
                     </div>
                     <div class="data">
                         <p>13 reasons why</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(4)">
                     </div>
                 </div>
                 <div class="element">
@@ -169,6 +206,7 @@
                     </div>
                     <div class="data">
                         <p>Le père Goriot</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(5)">
                     </div>
                 </div>
                 <div class="element">
@@ -177,6 +215,7 @@
                     </div>
                     <div class="data">
                         <p>Les Misérables</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(6)">
                     </div>
                 </div>
                 <div class="element">
@@ -185,6 +224,7 @@
                     </div>
                     <div class="data">
                         <p>Les Fables de La Fontaine</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(7)">
                     </div>
                 </div>
                 <div class="element">
@@ -193,6 +233,7 @@
                     </div>
                     <div class="data">
                         <p>à l'ouest rien de nouveau</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(8)">
                     </div>
                 </div>
                 <div class="element">
@@ -201,6 +242,7 @@
                     </div>
                     <div class="data">
                         <p>L'Avare</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(9)">
                     </div>
                 </div>
                 <div class="element">
@@ -209,6 +251,7 @@
                     </div>
                     <div class="data">
                         <p>Poésies Complètes</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(10)">
                     </div>
                 </div>
                 <div class="element">
@@ -217,6 +260,7 @@
                     </div>
                     <div class="data">
                         <p>Voyage au centre de la Terre</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(11)">
                     </div>
                 </div>
                 <div class="element">
@@ -225,6 +269,7 @@
                     </div>
                     <div class="data">
                         <p>Au bonheur des dames</p>
+			<input type="button" name="button1" value= "Ajouter"style=" margin-left:20px;", onclick="getproductData(12)">
                     </div>
                 </div>
             </div>
