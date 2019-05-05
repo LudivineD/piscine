@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" /> 
+        <title>ECE Amazone</title>
+        <link rel="stylesheet" type="text/css" href="paiement.css" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+    </head>
+    <body id="page">
+        <div class="container">
+            <div class="recherche">
+                <div class="logo">
+                    <a href="accueil1.html">
+                        <img src="images/eceamazone.png">
+                    </a>
+                </div>
+                <div class="barre">
+                    <form action="/search" class="search" id="searchthis" method="get">
+                        <input id="search" name="q" type="text" placeholder="Search here ....." />
+                        <input id="search-btn" type="submit" value="Rechercher" />
+                    </form>
+                </div>
+            </div>
+            <nav>
+                <ul id="menu-deroulant">
+                    <li><a href="#category">Catégories</a>
+                        <ul>
+                            <li><a href="Livres.html">Livres</a></li>
+                            <li><a href="Vetements.html">Vêtements</a></li>
+                            <li><a href="Musica.html">Musique</a></li>
+                            <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Ventesflash.html">Ventes flash</a></li>
+                    <li><a href="#">Vendre</a></li>
+                    <li><a href="#">Panier</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Mon compte</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="log">
+            <div id="login">
+                <h1> Paiement </h1>
+                <form action="paiement.php" method="post">
+                    <table>
+                        <tr>
+                            <td>Nom:</td>
+                            <td><input type="text" name="nom"></td>
+                        </tr>
+                        <tr>
+                            <td>Prénom:</td>
+                            <td><input type="text" name="prenom"></td>
+                        </tr>
+                        <tr>
+                            <td>Adresse Ligne 1:</td>
+                            <td><input type="text" name="adresse1"></td>
+                        </tr>
+                        <tr>
+                            <td>Adresse Ligne 2:</td>
+                            <td><input type="text" name="adresse2"></td>
+                        </tr>
+                        <tr>
+                            <td>Ville:</td>
+                            <td><input type="text" name="ville"></td>
+                        </tr>
+                        <tr>
+                            <td>Code Postal:</td>
+                            <td><input type="text" name="codepostal"></td>
+                        </tr>
+                        <tr>
+                            <td>Pays:</td>
+                            <td><input type="text" name="pays"></td>
+                        </tr>
+                        <tr>
+                            <td>Numéro de télephone:</td>
+                            <td><input type="text" name="telephone"></td>
+                        </tr>
+                        <tr>
+                            <td>Type de carte de paiement:</td>
+                            <td><input type="text" name="type"></td>
+                        </tr>
+                        <tr>
+                            <td>Type de carte de paiement:</td>
+                            <td>Visa<input type=checkbox name=m id=m/></td>
+                            <td>AmericanExpress<input type=checkbox name=m id=m/></td>
+                            <td>MasterCard<input type=checkbox name=m id=m/></td>
+                            <td>PayPal<input type=checkbox name=m id=m/></td>
+                        </tr>
+                        <tr>
+                            <td>Numéro de la carte:</td>
+                            <td><input type="text" name="numerocarte"></td>
+                        </tr>
+                        <tr>
+                            <td>Nom affiché sur la carte:</td>
+                            <td><input type="text" name="nomcarte"></td>
+                        </tr>
+                        <tr>
+                            <td>Date d'expiration de la carte :</td>
+                            <td><input type="text" name="dateexpiration"></td>
+                        </tr>
+                        <tr>
+                            <td>Code de sécurité:</td>
+                            <td><input type="text" name="codesecurite"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                             <input type="submit" name="button2" value="Paiement"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        <div id="bot"> 
+            <ul id="bottom">
+                <li><p>
+                        Nos différentes catégories
+                    </p>
+                    <ul>
+                        <li><a href="Livres.html">Livres</a></li>
+                        <li><a href="Vetements.html">Vêtements</a></li>
+                        <li><a href="Musica.html">Musique</a></li>
+                        <li><a href="Sports et Loisir.html">Sports & Loisir </a></li>
+                    </ul>
+                </li>
+                <li><p>
+                        Devenir vendeur
+                    </p>
+                    <ul>
+                        <li><a href=".html">Vendre sur Ece Amazone</a></li>
+                        <li><a href="#">Devenir partenaire</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        Une question ?
+                    </p>
+                    <ul>
+                        <li><a href=".html">FAQ</a></li>
+                        <li><a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a></li>
+                        <li>01 02 03 04 05</li>
+                    </ul>
+                </li>>
+            </ul>
+        </div>
+         <div id="footer">Copyright &copy; 2019, Ece Amazone<br>
+         <a href="mailto:ece.amazone@gmail.com">ece.amazone@gmail.com</a>
+         </div>
+</body>
+</html>
